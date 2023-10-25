@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .animate {
+    text-align: center;
+  }
+  .force {
+    font-size: 24px;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    white-space: nowrap;
+    display: inline-block;
+    transition: transform 0.3s ease; 
+  }
+  .force:hover {
+    animation: snakeEffect 2s linear infinite; 
+  }
+  @keyframes snakeEffect {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(10px);
+    }
+    50% {
+      transform: translateX(0);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  body {
+    background-image: url(/images/star-wars-background.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  .character-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+  .character-list li {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 17px;
+    font-family: sans-serif;
+    margin: 10px 0;
+  }
+  .character-list li:hover {
+    background-color: rgb(35, 22, 22);
+  }
+  .character-details {
+    color: rgb(202, 77, 233);
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .character-details img {
+    border-radius: 8px;
+    cursor: pointer;
+    max-width: 100%;
+    max-height: 150px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.9s ease;
+  }
+  .character-details img:hover {
+    transform: rotateY(180deg);
+  }
+  .navbar {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  .navbar ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+  }
+  .navbar ul.active {
+    display: flex;
+  }
+  .navbar ul li {
+    transition: all 2.5s ease;
+    padding: 5px auto; 
+  }
+  
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+  }
+  
+  li {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(36, 234, 10);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }  
+
+  li a:hover {
+    background-color: black;
+  }
+  .menu-toggle {
+    cursor: pointer;
+    margin-left: auto;
+    display: none;
+  }
+  .menu-open .bar.bar1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .menu-open .bar.bar2 {
+    opacity: 0;
+  }
+  .menu-open .bar.bar3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 8px 0;
+    transition: 0.4s;
+  }
+  
+  @media screen and (max-width: 768px) {
+    body {
+      background-size: cover;
+      background-position: center;
+    }
+    .parent-container {
+      background-size: cover;
+      background-position: center;
+    }
+    .menu-toggle {
+      display: block;
+    }
+    .navbar ul {
+      display: none;
+    }
+    .character-list {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  
+  .btn4 {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(88, 2, 2);
+    color: rgb(238, 234, 5);
+    cursor: pointer;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .btn:hover {
+    color: white;
+    opacity: 0.9;
+  }
+  
+  .btn4:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .clear-details {
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    font-family: sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .clear-details:hover {
+    color: black;
+    background-color: white;
+  }
+  .but {
+    background-color: rgb(93, 2, 2);
+    border: none;
+    border-radius: 5px;
+    color: #dde805;
+    cursor: pointer;
+    display: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .but:hover {
+    background-color: white;
+    color: black;
+  }
